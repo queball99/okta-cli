@@ -12,7 +12,12 @@ def main():
 
 	oapi = okta_api.okta_api(username, password)
 	authToken = oapi.getauthToken(username, password)
-	print(authToken)
+
+	profile = oapi.getProfile(authToken)
+	fullName = profile['name']
+
+	print("I'm sorry %s I can't do that." % fullName)
+
 
 if __name__ == '__main__':
 	main()

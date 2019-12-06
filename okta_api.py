@@ -25,7 +25,15 @@ class okta_api:
 		data = {"grant_type": "password", "username": username, "password": password, "scope": "profile openid"}
 
 		r = requests.post(endpoint, headers=headers, data=data)
-		code = r.status_code
 		response = r.json()
 		accessToken = response["access_token"]
 		return accessToken
+
+	def getProfile(self, authToken):
+		endpoint = 'https://dev-246301.okta.com/oauth2/default/v1/userinfo'
+		headers = {
+			"Authorization" : "Bearer %s" % authToken
+		}
+		r = requests.post(endpoint, headers=headers)
+		data = r.json()
+		return data
