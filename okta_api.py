@@ -22,7 +22,7 @@ class okta_api:
 			"Content-Type" : "application/x-www-form-urlencoded",
 			"Authorization" : "Basic %s" % api_auth
 		}
-		data = {"grant_type": "password","scope": "profile openid"}
+		data = {"grant_type": "password", "username": username, "password": password, "scope": "profile openid"}
 
 		r = requests.post(endpoint, headers=headers, data=data)
 		code = r.status_code
