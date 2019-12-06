@@ -13,8 +13,8 @@ class okta_api:
 		settingsFile = os.path.join(os.path.dirname(__file__), 'Resources/settings.json')
 		with open(settingsFile,'r') as sf:
 			settings = json.load(sf)
-		client_id = settings["client_id"]
-		client_secret = settings["client_secret"]
+		client_id = settings['client_id']
+		client_secret = settings['client_secret']
 		endpoint = 'https://dev-246301.okta.com/oauth2/default/v1/token'
 		headers = {
 			"Accept" : "application/json",
