@@ -16,7 +16,7 @@ def main():
 	profile = oapi.getProfile(authToken)
 	fullName = profile['name']
 
-	print("I'm sorry %s I can't do that." % fullName)
+	print("Welcome back %s. You've successfully accessd the Okta API." % fullName)
 
 
 if __name__ == '__main__':
