@@ -10,7 +10,8 @@ def main():
 	username = input("Okta Username: ")
 	password = getpass('Okta Password: ')
 
-	authToken = okta_api.okta_api(username, password)
+	oapi = okta_api.okta_api(username, password)
+	authToken = oapi.getauthToken(username, password)
 	print(authToken)
 
 if __name__ == '__main__':
