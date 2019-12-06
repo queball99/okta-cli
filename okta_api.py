@@ -26,5 +26,6 @@ class okta_api:
 		code = r.status_code
 		print(code)
 		response = r.json()
-		accessToken = response["access_token"]
-		return accessToken
+		print(response)
+		# accessToken = response["access_token"]
+		# return accessToken
