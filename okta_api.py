@@ -23,6 +23,8 @@ class okta_api:
 		data = {'grant_type': 'password', 'username': username, 'password': password, 'scope': 'profile openid'}
 
 		r = requests.post(endpoint, headers=headers, auth=HTTPDigestAuth(client_id, client_secret), data=data)
+		code = r.status_code
+		print(code)
 		response = r.json()
 		accessToken = response["access_token"]
 		return accessToken
