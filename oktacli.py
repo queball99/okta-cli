@@ -7,7 +7,7 @@ from getpass import getpass
 import okta_api
 
 def main():
-	username = raw_input("Okta Username: ")
+	username = input("Okta Username: ")
 	password = getpass('Okta Password: ')
 
 	authToken = okta_api.okta_api(username, password)
