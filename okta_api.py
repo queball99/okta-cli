@@ -5,9 +5,9 @@ from requests.auth import HTTPDigestAuth
 import json, os
 
 class okta_api:
-	# def __init__(self, client_id, client_secret):
-	# 	self.client_id = client_id
-	# 	self.client_secret = client_secret
+	def __init__(self, username, password):
+		self.username = username
+		self.password = password
 
 	def getauthToken(self, username, password):
 		settingsFile = os.path.join(os.path.dirname(__file__), 'Resources/settings.json')
